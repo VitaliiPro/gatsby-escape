@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.6.2"
   },
   "keywords": [
@@ -35,6 +36,7 @@
   ],
   "license": "0BSD",
   "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d pablic",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
