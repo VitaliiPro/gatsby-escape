@@ -1,16 +1,52 @@
-import * as React from "react"
-import { Link } from "gatsby"
+// import * as React from "react"
+// // import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import { graphql } from "gatsby"
+// import Layout from "../components/layout"
+// // import Seo from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+// const SecondPage = ({data}) => {
+//   console.log(data.allPrismicPos.edges);
+//   return (
+//   <Layout>
+//     <div>
+//       {data.allPrismicPos.edges.map(post => {
+//         return (
+//           <div key={post.node.uid}>
+//             <h1 style={{fontSize: `45px`, color: `black`}}>{post.node.data.autor.text}</h1>
+//           </div>
+//         )
+//       })}
+//     </div>
 
-export default SecondPage
+//   </Layout>
+// )
+//     }
+
+//     export const pageQuery = graphql`
+//   query MyQuery {
+//     allPrismicPos {
+//       edges {
+//         node {
+//           data {
+//             autor {
+//               text
+//               richText
+//             }
+//             image {
+//               url
+//               alt
+//             }
+//             date
+//             title {
+//               text
+//             }
+//           }
+//           uid
+//         }
+//       }
+//     }
+//   }
+// `
+
+// export default SecondPage

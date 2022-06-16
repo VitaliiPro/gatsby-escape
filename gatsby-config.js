@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: ".env",
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,6 +10,19 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-source-prismic", 
+      options: {
+        repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY,
+        customTypesApiToken: process.env.PRISMIC_API_TOKEN,
+        linkResolver: ({node, key, value}) => post => `/${post.uid}`,
+        schemas: {
+          post: require("./custom_types/post.json"),
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -34,5 +51,16 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Oxygen`,
+          `Lora`,
+          `Roboto`,
+        ],
+        display: "swap",
+      },
+    },
   ],
 }
