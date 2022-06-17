@@ -3,6 +3,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import CategoryMenu from "../components/category-menu/category-menu"
+import * as styles from "../components/index.module.css"
 
 import {
   Title,

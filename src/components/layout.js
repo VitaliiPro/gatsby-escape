@@ -5,7 +5,6 @@ import Footer from "./footer/footer"
 
 import Header from "./header/header"
 import Navigation from "./navigation/navigation"
-import "./index.module.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
