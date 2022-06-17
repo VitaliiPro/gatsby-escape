@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: "gatsby-source-prismic", 
       options: {
-        repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY,
+        repositoryName: "escape-blog",
         customTypesApiToken: process.env.PRISMIC_API_TOKEN,
         linkResolver: ({node, key, value}) => post => `/${post.uid}`,
         schemas: {
