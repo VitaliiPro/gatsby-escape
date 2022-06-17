@@ -3,7 +3,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import CategoryMenu from "../components/category-menu/category-menu"
-import * as styles from "../components/index.module.css"
+
 import {
   Title,
   Line,
@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => {
                 {getPostData.autor.richText.map(autor => {
                   return (
                     <PostFooter>
-                      <img src={getPostData.avatar_img.url} />
+                      <img src={getPostData.avatar_img.url} alt={""} />
                       <span>{autor.text}</span>
                       <span>{getPostData.date}</span>
                     </PostFooter>
@@ -84,11 +84,9 @@ const IndexPage = ({ data }) => {
                 {getMostRecentData.autor.richText.map(autor => {
                   return (
                     <MostRecentPostFooter>
-                      <img src={getMostRecentData.avatar_img.url} />
+                      <img src={getMostRecentData.avatar_img.url} alt={""} />
                       <span>{autor.text}</span>
-                      <span>
-                        {getMostRecentData.date}
-                      </span>
+                      <span>{getMostRecentData.date}</span>
                     </MostRecentPostFooter>
                   )
                 })}
